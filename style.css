@@ -1,0 +1,1285 @@
+
+
+:root {
+  --red: #e4002b;
+  --dark-red: #bd103a;
+  --aubergine: #65002d;
+  --gold: #e9c57f;
+  --ink: #25232b;
+  --muted: #6d7078;
+  --bg: #f5f6f7;
+  --border: #dce0e5;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+a,
+button {
+  transition: 0.2s ease;
+}
+
+/* ANNOUNCEMENT BAR */
+
+.notice {
+  min-height: 43px;
+  background: white;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 4%;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.notice > span {
+  font-size: 21px;
+}
+
+.notice p {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notice a:first-of-type {
+  color: #2863bf;
+  text-decoration: underline;
+}
+
+.notice a:last-of-type {
+  font-size: 24px;
+  margin-left: 8px;
+}
+
+/* HEADER AND LOGO */
+
+.header {
+  min-height: 82px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 4%;
+  gap: 25px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.logo {
+  display: block;
+  flex-shrink: 0;
+}
+
+.logo img {
+  display: block;
+  width: 148px;
+  max-height: 55px;
+  object-fit: contain;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.utility,
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+}
+
+.utility a {
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.utility a:hover,
+.main-nav a:hover {
+  color: var(--red);
+}
+
+.discover {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.signup,
+.signin {
+  padding: 6px 10px;
+  border: 1px solid var(--red);
+  border-radius: 4px;
+  color: var(--red);
+}
+
+.signin {
+  color: white;
+  background: linear-gradient(110deg, #e0002b, #650044);
+  border-color: transparent;
+}
+
+.main-nav {
+  gap: 23px;
+}
+
+.main-nav a {
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+/* FLIGHT BOOKING */
+
+.booking-wrap {
+  padding: 16px 4% 20px;
+  background: var(--bg);
+}
+
+.booking {
+  max-width: 1610px;
+  margin: 0 auto;
+  min-height: 300px;
+  padding: 19px 17px 18px;
+  background: white;
+  border-radius: 19px;
+  box-shadow: 0 3px 15px rgba(23, 32, 48, 0.08);
+}
+
+.booking-tabs {
+  min-height: 33px;
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  padding: 4px 5px;
+  background: #f6f6f6;
+  border-radius: 7px;
+  overflow-x: auto;
+}
+
+.booking-tabs a {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.booking-tabs a:hover,
+.booking-tabs .active {
+  background: white;
+  color: var(--red);
+  box-shadow: 0 1px 3px #ddd;
+}
+
+.booking-tabs .student-offer {
+  margin-left: auto;
+  color: var(--red);
+  background: #ffe2e0;
+  font-weight: 600;
+}
+
+.trip-row {
+  min-height: 63px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.trip-types,
+.pay-options {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trip-types label,
+.trip-types a,
+.pay-options a {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.trip-types label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.trip-types input {
+  accent-color: var(--red);
+  width: 17px;
+  height: 17px;
+}
+
+.trip-types a,
+.pay-options b {
+  color: var(--red);
+}
+
+.pay-options a {
+  padding: 8px 13px;
+  border-right: 1px solid #eee;
+}
+
+.pay-options strong {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+/* FLIGHT FORM */
+
+.flight-form {
+  display: grid;
+  grid-template-columns:
+    minmax(125px, 1.1fr)
+    28px
+    minmax(125px, 1.1fr)
+    minmax(105px, 0.8fr)
+    minmax(105px, 0.8fr)
+    minmax(135px, 1fr)
+    minmax(135px, 1fr)
+    minmax(130px, 0.95fr)
+    128px;
+  align-items: center;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.airport {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+}
+
+.airport input {
+  width: 100%;
+  min-width: 0;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: clamp(23px, 2.2vw, 36px);
+  font-weight: 700;
+  color: #5a6677;
+}
+
+.airport input::placeholder {
+  color: #5a6677;
+  opacity: 1;
+}
+
+.airport span {
+  color: #3f4a60;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.swap {
+  color: var(--red);
+  font-size: 25px;
+  text-align: center;
+}
+
+.date-field,
+.select-field {
+  min-width: 0;
+  min-height: 43px;
+  border-left: 1px solid #adb4c0;
+  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.date-field label,
+.select-field label {
+  color: #5d6068;
+  font-size: 11px;
+}
+
+.date-field input,
+.select-field select {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #252d3b;
+  background: transparent;
+  font-size: 14px;
+}
+
+.select-field select {
+  cursor: pointer;
+}
+
+.search-btn {
+  width: 100%;
+  min-height: 43px;
+  border: 0;
+  border-radius: 10px;
+  background: #e95f79;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background: var(--red);
+}
+
+.login-promo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: fit-content;
+  margin: 22px 0 0 auto;
+  border: 1px solid #ded7cf;
+  border-radius: 24px;
+  padding: 4px 11px 4px 4px;
+  background: #faf8f3;
+  font-size: 12px;
+}
+
+.promo-icon {
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 28px;
+  margin-right: 8px;
+  color: var(--red);
+  border-radius: 50%;
+  background: white;
+  font-size: 20px;
+}
+
+/* GENERAL SECTION WIDTH */
+
+.page-width {
+  width: 92%;
+  max-width: 1610px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* EXCLUSIVE DEALS */
+
+.deals {
+  padding-top: 4px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.section-title h1 {
+  font-size: 25px;
+  color: var(--dark-red);
+  letter-spacing: -0.8px;
+  margin-bottom: 8px;
+}
+
+.section-title p {
+  font-size: 16px;
+  color: #303642;
+  line-height: 1.6;
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+  padding: 14px 17px;
+  border: 1px solid var(--red);
+  border-radius: 9px;
+  color: var(--red);
+  font-size: 13px;
+}
+
+.view-all:hover {
+  color: white;
+  background: var(--red);
+}
+
+.view-all b {
+  padding: 4px 6px;
+  background: var(--red);
+  color: white;
+  border-radius: 4px;
+}
+
+.deal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.deal {
+  min-height: 123px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  border-radius: 13px;
+  color: white;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 75% 50%, #aa064e, #350019 90%);
+}
+
+.deal > span:first-child {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.deal-art {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  color: #f6d37c;
+  font-size: 53px;
+  font-weight: 700;
+  font-family: Georgia, serif;
+  text-shadow: 1px 2px 3px #4b1a00;
+  transform: rotate(-8deg);
+}
+
+.discount .deal-art {
+  font-family: Arial, sans-serif;
+  font-size: 67px;
+}
+
+.limited .deal-art {
+  font-size: 58px;
+}
+
+.deal:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 19px;
+  padding: 27px 0 25px;
+}
+
+.dots a {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #b7bdc7;
+}
+
+.dots a.selected,
+.dots a:hover {
+  background: var(--red);
+}
+
+/* HOTELS / CAR / DUTY FREE / GIFT CARDS */
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.quick-links a {
+  min-height: 70px;
+  padding: 15px 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border-radius: 13px;
+  font-size: 18px;
+  color: #41434b;
+}
+
+.quick-links a > span {
+  color: var(--red);
+  font-size: 25px;
+}
+
+.quick-links b {
+  margin-left: auto;
+  color: var(--red);
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.quick-links a:hover {
+  box-shadow: 0 4px 15px #ddd;
+  transform: translateY(-2px);
+}
+
+/* PROMOTIONAL BANNER */
+
+.banner {
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 13px;
+  padding: 40px;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(30, 0, 14, 0.94), rgba(120, 0, 36, 0.35)),
+    url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1800&q=85")
+    center / cover;
+}
+
+.banner-copy span {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.banner-copy h2 {
+  font-size: clamp(26px, 3vw, 42px);
+  margin: 12px 0 22px;
+}
+
+.banner-copy a,
+.experience-button {
+  display: inline-block;
+  padding: 12px 18px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.banner-copy a:hover,
+.experience-button:hover {
+  background: white;
+  color: var(--dark-red);
+}
+
+/* BOOK NONSTOP DIRECT FLIGHTS */
+
+.direct-flights {
+  padding-top: 36px;
+  padding-bottom: 45px;
+}
+
+.direct-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 28px;
+}
+
+.direct-heading h2 {
+  color: var(--dark-red);
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.direct-heading p {
+  max-width: 1200px;
+  color: #303642;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.direct-view-all {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 104px;
+  min-height: 58px;
+  padding: 15px 20px;
+  flex-shrink: 0;
+  border: 1px solid var(--red);
+  border-radius: 11px;
+  color: var(--red);
+  background: white;
+  font-size: 14px;
+}
+
+.direct-view-all:hover {
+  color: white;
+  background: var(--red);
+}
+
+.direct-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.direct-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-width: 0;
+  height: 400px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 18px;
+  background-color: #45464a;
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+
+.direct-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    transparent 30%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.90) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+.direct-card:hover {
+  filter: brightness(1.08);
+}
+
+.direct-card-info {
+  width: 100%;
+  padding: 22px 19px 27px;
+}
+
+.direct-card-info h3 {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.direct-card-info p {
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: white;
+}
+
+/* Destination images */
+
+.direct-card.hyderabad {
+  background-image: url("https://images.unsplash.com/photo-1565552629476-4b8b5f0e4e7c?auto=format&fit=crop&w=800&q=85");
+}
+
+.direct-card.bangkok {
+  background-image: url("https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=85");
+}
+
+.direct-card.dubai {
+  background-image: url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=85");
+}
+
+.direct-card.delhi {
+  background-image: url("https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=85");
+}
+
+.direct-card.chennai {
+  background-image: url("https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=800&q=85");
+}
+
+.direct-card.new-york {
+  background-image: url("https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=800&q=85");
+}
+
+.direct-card.bangalore {
+  background-image: url("https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=85");
+}
+
+.direct-card.kolkata {
+  background-image: url("https://images.unsplash.com/photo-1558431382-27e303142255?auto=format&fit=crop&w=800&q=85");
+}
+
+/* EXPERIENCE SECTION */
+
+.experience {
+  min-height: 310px;
+  padding: 45px;
+  display: flex;
+  align-items: center;
+  color: white;
+  border-radius: 14px;
+  background:
+    linear-gradient(100deg, rgba(40, 0, 18, 0.95), rgba(113, 0, 39, 0.7)),
+    url("https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=1400&q=85")
+    center / cover;
+}
+
+.experience > div {
+  max-width: 650px;
+}
+
+.gold-label {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.experience h2,
+.maharaja h2 {
+  font-size: clamp(30px, 4vw, 45px);
+  line-height: 1.2;
+  margin: 15px 0;
+}
+
+.experience p,
+.maharaja p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+/* MAHARAJA CLUB */
+
+.maharaja {
+  margin-top: 35px;
+  margin-bottom: 45px;
+  padding: 40px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border-radius: 14px;
+  color: white;
+  background:
+    radial-gradient(ellipse at 85% 50%, #a52c3d, transparent 50%),
+    linear-gradient(120deg, #651523, #851d30);
+}
+
+.maharaja > div {
+  max-width: 650px;
+}
+
+.maharaja p {
+  margin-bottom: 15px;
+}
+
+.maharaja a {
+  display: inline-block;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.maharaja-symbol {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 65px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #252027;
+  color: white;
+  padding: 45px 4% 20px;
+}
+
+.footer-grid {
+  max-width: 1610px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.footer-grid h3 {
+  color: #ff536c;
+  font-size: 22px;
+}
+
+.footer-grid h4 {
+  color: var(--gold);
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.footer-grid a {
+  display: block;
+  color: #e1dce0;
+  margin: 10px 0;
+  font-size: 12px;
+}
+
+.footer-grid a:hover {
+  color: white;
+}
+
+.copyright {
+  max-width: 1610px;
+  margin: 30px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid #4d454d;
+  font-size: 11px;
+  color: #bbb3bb;
+}
+
+/* FLOATING BUTTONS */
+
+.feedback {
+  position: fixed;
+  right: 0;
+  top: 56%;
+  z-index: 50;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 12px 8px;
+  color: white;
+  background: var(--red);
+  border-radius: 0 10px 10px 0;
+  font-size: 14px;
+}
+
+.chat {
+  position: fixed;
+  z-index: 50;
+  right: 22px;
+  bottom: 20px;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, white, #ffe4e8);
+  color: var(--red);
+  border: 3px solid white;
+  box-shadow: 0 2px 12px #bbb;
+  font-size: 30px;
+}
+
+/* NAVIGATION TARGETS */
+
+.anchor {
+  display: block;
+  scroll-margin-top: 110px;
+}
+
+/* TABLET */
+
+@media (max-width: 1250px) {
+  .header {
+    align-items: flex-start;
+  }
+
+  .header-right {
+    max-width: 85%;
+  }
+
+  .utility,
+  .main-nav {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .utility a,
+  .main-nav a {
+    font-size: 10px;
+  }
+
+  .flight-form {
+    grid-template-columns: 1fr 25px 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  .airport input {
+    font-size: 28px;
+  }
+
+  .search-btn {
+    grid-column: 5;
+    grid-row: 2;
+  }
+
+  .flight-form .select-field:last-of-type {
+    grid-column: 4;
+    grid-row: 2;
+  }
+
+  .deal-grid,
+  .quick-links {
+    gap: 12px;
+  }
+
+  .deal {
+    padding: 14px;
+  }
+
+  .deal > span:first-child {
+    font-size: 14px;
+  }
+
+  .deal-art {
+    font-size: 43px;
+    width: 50px;
+  }
+
+  .quick-links a {
+    font-size: 14px;
+    padding: 13px;
+  }
+
+  .direct-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .direct-card {
+    height: 350px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+  .notice {
+    padding: 8px 12px;
+    gap: 7px;
+    font-size: 10px;
+  }
+
+  .notice a:first-of-type {
+    display: none;
+  }
+
+  .header {
+    min-height: auto;
+    padding: 15px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .logo img {
+    width: 135px;
+  }
+
+  .header-right {
+    max-width: 100%;
+    align-items: flex-start;
+    gap: 13px;
+  }
+
+  .utility,
+  .main-nav {
+    justify-content: flex-start;
+    gap: 8px 13px;
+  }
+
+  .utility a,
+  .main-nav a {
+    font-size: 10px;
+  }
+
+  .booking-wrap {
+    padding: 12px;
+  }
+
+  .booking {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .booking-tabs {
+    gap: 7px;
+  }
+
+  .booking-tabs a {
+    font-size: 10px;
+    padding: 7px;
+  }
+
+  .trip-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 0;
+    gap: 13px;
+  }
+
+  .trip-types,
+  .pay-options {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .pay-options a {
+    padding: 5px;
+  }
+
+  .flight-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .airport input {
+    font-size: 25px;
+  }
+
+  .swap {
+    display: none;
+  }
+
+  .date-field,
+  .select-field {
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 10px;
+    min-height: 66px;
+  }
+
+  .search-btn {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 45px;
+  }
+
+  .login-promo {
+    max-width: 100%;
+    font-size: 10px;
+    margin-top: 15px;
+  }
+
+  .page-width {
+    width: 92%;
+  }
+
+  .section-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .section-title h1 {
+    font-size: 23px;
+  }
+
+  .section-title p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .deal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .deal {
+    min-height: 100px;
+    padding: 12px;
+    border-radius: 9px;
+  }
+
+  .deal > span:first-child {
+    font-size: 12px;
+  }
+
+  .deal-art {
+    font-size: 39px;
+    width: 35px;
+  }
+
+  .dots {
+    padding: 20px 0;
+  }
+
+  .quick-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .quick-links a {
+    min-height: 60px;
+    font-size: 11px;
+    gap: 6px;
+    padding: 10px;
+  }
+
+  .quick-links a > span {
+    font-size: 20px;
+  }
+
+  .quick-links b {
+    font-size: 23px;
+  }
+
+  .banner {
+    min-height: 220px;
+    padding: 22px;
+  }
+
+  .direct-flights {
+    padding-top: 28px;
+    padding-bottom: 30px;
+  }
+
+  .direct-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .direct-heading h2 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .direct-heading p {
+    font-size: 13px;
+  }
+
+  .direct-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .direct-card {
+    height: 270px;
+    border-radius: 12px;
+  }
+
+  .direct-card-info {
+    padding: 13px;
+  }
+
+  .direct-card-info h3 {
+    font-size: 15px;
+    margin-bottom: 7px;
+  }
+
+  .direct-card-info p {
+    font-size: 11px;
+  }
+
+  .direct-view-all {
+    min-height: 43px;
+  }
+
+  .experience {
+    min-height: 260px;
+    padding: 24px;
+  }
+
+  .experience h2,
+  .maharaja h2 {
+    font-size: 30px;
+  }
+
+  .maharaja {
+    padding: 25px;
+  }
+
+  .maharaja-symbol {
+    width: 70px;
+    height: 70px;
+    font-size: 38px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .chat {
+    right: 12px;
+    bottom: 12px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 380px) {
+  .deal > span:first-child {
+    font-size: 10px;
+  }
+
+  .deal-art {
+    font-size: 30px;
+    width: 25px;
+  }
+
+  .direct-card {
+    height: 235px;
+  }
+
+  .direct-card-info {
+    padding: 10px;
+  }
+
+  .direct-card-info h3 {
+    font-size: 13px;
+  }
+
+  .direct-card-info p {
+    font-size: 10px;
+  }
+
+  .quick-links a {
+    font-size: 10px;
+    gap: 4px;
+    padding: 8px;
+  }
+
+  .maharaja-symbol {
+    display: none;
+  }
+}

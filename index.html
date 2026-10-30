@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Air India - Homepage Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Announcement -->
+  <div class="notice">
+    <span>ⓘ</span>
+    <p>Travel updates and important passenger information. Check the latest travel requirements before your journey.</p>
+    <a href="#travel-info">View All</a>
+    <a href="#home" aria-label="Close announcement">×</a>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="home">
+    <a class="logo" href="#home">
+      <img src="https://dmlib.airindia.com/adobe/assets/urn:aaid:aem:3c6a707f-2e38-48d0-ac12-4751c4f554ba/as/AI_Logo_Red_New.svg" alt="Air India logo">
+    </a>
+
+    <div class="header-right">
+      <div class="utility">
+        <a href="#tariff">▤ TARIFF</a>
+        <a class="discover" href="#discover">DISCOVER AI ✦</a>
+        <a href="#support">♧ SUPPORT</a>
+        <a href="#search">⌕ SEARCH</a>
+        <a href="#language">◎ IN⌄</a>
+        <a class="signup" href="#signup">SIGN UP</a>
+        <a class="signin" href="#signin">SIGN IN</a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#booking">BOOK &amp; MANAGE</a>
+        <a href="#destinations">WHERE WE FLY</a>
+        <a href="#travel-info">PREPARE TO TRAVEL</a>
+        <a href="#experience">AIR INDIA EXPERIENCE</a>
+        <a href="#maharaja">MAHARAJA CLUB</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Flight Booking -->
+    <section class="booking-wrap" id="booking">
+      <div class="booking">
+
+        <div class="booking-tabs">
+          <a class="active" href="#booking">SEARCH FLIGHTS</a>
+          <a href="#manage">MANAGE BOOKING</a>
+          <a href="#checkin">CHECK-IN</a>
+          <a href="#flight-status">FLIGHT STATUS</a>
+          <a href="#ezbooking">eZ Booking</a>
+          <a class="student-offer" href="#deals">Flat 10% off For Students</a>
+        </div>
+
+        <div class="trip-row">
+          <div class="trip-types">
+            <label><input type="radio" name="trip" checked> Round Trip</label>
+            <label><input type="radio" name="trip"> One Way</label>
+            <a href="#multi-city">Multi City</a>
+          </div>
+          <div class="pay-options">
+            <a href="#payment">Pay By <strong>Cash ﹀</strong></a>
+            <a href="#promo">Add Promo Code <b>﹀</b></a>
+          </div>
+        </div>
+
+        <form class="flight-form" action="#booking" method="get">
+          <div class="airport">
+            <input aria-label="Origin" list="airports" name="origin" placeholder="FROM" required>
+            <span>Origin</span>
+          </div>
+
+          <a class="swap" href="#booking" title="Swap destinations">↔</a>
+
+          <div class="airport">
+            <input aria-label="Destination" list="airports" name="destination" placeholder="TO" required>
+            <span>Destination</span>
+          </div>
+
+          <datalist id="airports">
+            <option value="Delhi (DEL)">
+            <option value="Mumbai (BOM)">
+            <option value="Pune (PNQ)">
+            <option value="Hyderabad (HYD)">
+            <option value="Bengaluru (BLR)">
+            <option value="Chennai (MAA)">
+            <option value="Kolkata (CCU)">
+            <option value="Dubai (DXB)">
+            <option value="Bangkok (BKK)">
+            <option value="New York (JFK)">
+          </datalist>
+
+          <div class="date-field">
+            <label for="depart">Depart</label>
+            <input type="date" id="depart" name="depart" required>
+          </div>
+
+          <div class="date-field">
+            <label for="return">Return</label>
+            <input type="date" id="return" name="return">
+          </div>
+
+          <div class="select-field">
+            <label for="passengers">Passenger(s)</label>
+            <select id="passengers" name="passengers">
+              <option>1 Adult</option>
+              <option>2 Adults</option>
+              <option>3 Adults</option>
+              <option>4 Adults</option>
+              <option>5 Adults</option>
+            </select>
+          </div>
+
+          <div class="select-field">
+            <label for="travel-class">Class</label>
+            <select id="travel-class" name="class">
+              <option>Economy</option>
+              <option>Premium Economy</option>
+              <option>Business</option>
+              <option>First Class</option>
+            </select>
+          </div>
+
+          <div class="select-field">
+            <label for="concession">Concession Type</label>
+            <select id="concession" name="concession">
+              <option>None</option>
+              <option>Student</option>
+              <option>Senior Citizen</option>
+              <option>Armed Forces</option>
+            </select>
+          </div>
+
+          <button class="search-btn" type="submit">Search</button>
+        </form>
+
+        <a class="login-promo" href="#signin">
+          <span class="promo-icon">✿</span>
+          Logged-in users enjoy up to 15% off on fares
+        </a>
+      </div>
+    </section>
+
+    <!-- Exclusive Deals -->
+    <section class="deals page-width" id="deals">
+      <div class="section-title">
+        <div>
+          <h1>EXCLUSIVE DEALS</h1>
+          <p>Uncover a range of deals and discounts, curated to ensure you get unbeatable value every time you fly with us.</p>
+        </div>
+        <a class="view-all" href="#all-deals">View All <b>23</b></a>
+      </div>
+
+      <div class="deal-grid" id="all-deals">
+        <a class="deal bank" href="#bank-offers">
+          <span>BANK<br>OFFERS</span><span class="deal-art">₹</span>
+        </a>
+        <a class="deal discount" href="#discount-codes">
+          <span>DISCOUNT<br>CODES</span><span class="deal-art">%</span>
+        </a>
+        <a class="deal limited" href="#limited-deals">
+          <span>LIMITED TIME<br>DEALS</span><span class="deal-art">◷</span>
+        </a>
+        <a class="deal special" href="#special-fares">
+          <span>SPECIAL<br>FARES</span><span class="deal-art">♢</span>
+        </a>
+      </div>
+
+      <div class="dots">
+        <a class="selected" href="#all-deals" aria-label="Deals page 1"></a>
+        <a href="#bank-offers" aria-label="Deals page 2"></a>
+        <a href="#discount-codes" aria-label="Deals page 3"></a>
+        <a href="#limited-deals" aria-label="Deals page 4"></a>
+        <a href="#special-fares" aria-label="Deals page 5"></a>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links page-width">
+      <a href="#hotels"><span>♙</span> HOTELS <b>›</b></a>
+      <a href="#car-booking"><span>♧</span> CAR BOOKING <b>›</b></a>
+      <a href="#duty-free"><span>♧</span> DUTY FREE <b>›</b></a>
+      <a href="#gift-card"><span>♧</span> GIFT CARD <b>›</b></a>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="banner page-width" id="discover">
+      <div class="banner-copy">
+        <span>DISCOVER MORE WITH AIR INDIA</span>
+        <h2>Your next journey begins here.</h2>
+        <a href="#destinations">Explore destinations ↗</a>
+      </div>
+    </section>
+
+    <!-- Nonstop Direct Flights -->
+    <section class="direct-flights page-width" id="destinations">
+      <div class="direct-heading">
+        <div>
+          <h2>BOOK NONSTOP DIRECT FLIGHTS</h2>
+          <p>Spend less time travelling and more time at your destination. Our nonstop network connects India to destinations across Asia, Australia, Europe, the Middle East, North America, and more.</p>
+        </div>
+        <a href="#all-destinations" class="direct-view-all">View All</a>
+      </div>
+
+      <div class="direct-grid" id="all-destinations">
+        <a href="#booking" class="direct-card hyderabad">
+          <div class="direct-card-info">
+            <h3>HYDERABAD</h3>
+            <p>Rajiv Gandhi International Airport (HYD)</p>
+          </div>
+        </a>
+
+        <a href="#booking" class="direct-card bangkok">
+          <div class="direct-card-info">
+            <h3>BANGKOK</h3>
+            <p>Suvarnabhumi Airport (BKK)</p>
+          </div>
+        </a>
+
+        <a href="#booking" class="direct-card dubai">
+          <div class="direct-card-info">
+            <h3>DUBAI</h3>
+            <p>Dubai International Airport (DXB)</p>
+          </div>
+        </a>
+
+        <a href="#booking" class="direct-card delhi">
+          <div class="direct-card-info">
+            <h3>DELHI</h3>
+            <p>Indira Gandhi International Airport (DEL)</p>
+          </div>
+        </a>
+
+        <a href="#booking" class="direct-card chennai">
+          <div class="direct-card-info">
+            <h3>CHENNAI</h3>
+            <p>Chennai International Airport (MAA)</p>
+          </div>
+        </a>
+
+        <a href="#booking" class="direct-card new-york">
+          <div class="direct-card-info">
+            <h3>NEW YORK</h3>
+            <p>John F. Kennedy International Airport (JFK)</p>
+          </div>
+        </a>
+
+        <a href="#booking" class="direct-card bangalore">
+          <div class="direct-card-info">
+            <h3>BANGALORE</h3>
+            <p>Kempegowda International Airport (BLR)</p>
+          </div>
+        </a>
+
+        <a href="#booking" class="direct-card kolkata">
+          <div class="direct-card-info">
+            <h3>KOLKATA</h3>
+            <p>Netaji Subhash Chandra Bose International Airport (CCU)</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience page-width" id="experience">
+      <div>
+        <span class="gold-label">THE AIR INDIA EXPERIENCE</span>
+        <h2>Thoughtful journeys.<br>Memorable moments.</h2>
+        <p>Discover comfort, hospitality and experiences inspired by India.</p>
+        <a href="#maharaja" class="experience-button">Explore the experience ↗</a>
+      </div>
+    </section>
+
+    <!-- Maharaja Club -->
+    <section class="maharaja page-width" id="maharaja">
+      <div>
+        <span class="gold-label">TRAVEL MORE. ENJOY MORE.</span>
+        <h2>Discover Maharaja Club</h2>
+        <p>Explore rewards and privileges with every journey.</p>
+        <a href="#signin">Explore membership ↗</a>
+      </div>
+      <span class="maharaja-symbol">✦</span>
+    </section>
+
+    <!-- Footer -->
+    <footer id="support">
+      <div class="footer-grid">
+        <div>
+          <h3>AIR INDIA</h3>
+          <p>Global airline. Indian heart.</p>
+        </div>
+        <div>
+          <h4>BOOK &amp; MANAGE</h4>
+          <a href="#booking">Search flights</a>
+          <a href="#manage">Manage booking</a>
+          <a href="#checkin">Check-in</a>
+          <a href="#flight-status">Flight status</a>
+        </div>
+        <div>
+          <h4>DISCOVER</h4>
+          <a href="#destinations">Where we fly</a>
+          <a href="#deals">Exclusive deals</a>
+          <a href="#experience">Our experience</a>
+          <a href="#maharaja">Maharaja Club</a>
+        </div>
+        <div>
+          <h4>HELP &amp; SUPPORT</h4>
+          <a href="#support">Contact us</a>
+          <a href="#travel-info">Travel information</a>
+          <a href="#home">Back to top ↑</a>
+        </div>
+      </div>
+      <p class="copyright">Educational homepage recreation. Not the official Air India website.</p>
+    </footer>
+
+    <!-- Demo navigation targets -->
+    <span id="manage" class="anchor"></span>
+    <span id="checkin" class="anchor"></span>
+    <span id="flight-status" class="anchor"></span>
+    <span id="ezbooking" class="anchor"></span>
+    <span id="multi-city" class="anchor"></span>
+    <span id="payment" class="anchor"></span>
+    <span id="promo" class="anchor"></span>
+    <span id="bank-offers" class="anchor"></span>
+    <span id="discount-codes" class="anchor"></span>
+    <span id="limited-deals" class="anchor"></span>
+    <span id="special-fares" class="anchor"></span>
+    <span id="hotels" class="anchor"></span>
+    <span id="car-booking" class="anchor"></span>
+    <span id="duty-free" class="anchor"></span>
+    <span id="gift-card" class="anchor"></span>
+    <span id="signup" class="anchor"></span>
+    <span id="signin" class="anchor"></span>
+    <span id="search" class="anchor"></span>
+    <span id="language" class="anchor"></span>
+    <span id="tariff" class="anchor"></span>
+    <span id="travel-info" class="anchor"></span>
+
+  </main>
+
+  <a href="#support" class="feedback">Feedback</a>
+  <a href="#support" class="chat" aria-label="Customer support">✦</a>
+
+</body>
+</html>
